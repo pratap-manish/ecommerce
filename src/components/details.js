@@ -1,6 +1,4 @@
 import React ,{useState, useEffect} from 'react';
-import { useHistory ,useLocation } from 'react-router-dom';
-import products from './products.json'
 import apicalls from '../apicalls';
 function Details(props) {
     useEffect(() => {

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSyncExternalStore } from 'react';
 import apiCalls from '../../apicalls';
 import { Link } from 'react-router-dom';
 
