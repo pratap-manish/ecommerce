@@ -1,0 +1,6 @@
+.single-product:hover{
+    cursor: pointer;
+  }
+  .single-product{
+    border: 10px white solid;
+  }
