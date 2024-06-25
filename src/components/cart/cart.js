@@ -51,12 +51,9 @@ function Cart(props) {
       
       }
      const removeProduct = (product)=>{
-      console.log("check");
       const products = [...cartProducts];
-      console.log(products);
       const newProducts = products.filter((item) => {return item.id !== product.id}
       )
-      console.log(newProducts);
       setcartProducts(newProducts)
      }
 

@@ -6,13 +6,13 @@ function Details(props) {
             try {
                 const response = await apicalls.Get("https://fakestoreapi.com/products/" + props?.productId)
                 setproduct(response)
-                console.log(response);
+                // console.log(response);
                     const rating = [false,false,false,false,false]
                     for(let i=0;i<Math.round(response.rating.rate);i++){
                        rating[i] = 1;
                     }
                     setrating(rating)
-                console.log(response);
+                // console.log(response);
             } catch (error) {
                 console.log(error);
             }
@@ -50,9 +50,9 @@ function Details(props) {
       }
     return (
         product &&          
-                    <div className='d-flex' >
-                        <div className='d-flex flex-column p-3'>
-                        <img style={{"width":"20rem"}} src={product.image} alt="" />
+                    <div className='d-flex flex-md-row flex-column m-3' >
+                        <div className='d-flex flex-column p-3 mx-auto'>
+                        <img style={{ width: "calc(3rem + 55%)",height:"50%"}} className='align-self-center' src={product.image} alt="" />
                         </div>
                         <div className='d-flex flex-column'>
                         <h2 className='p-2 bg-light m-2 mb-0'>{product.title}</h2>
@@ -73,6 +73,7 @@ function Details(props) {
                                     </>
                         )
                         )}     
+                        <h6 className='mt-1'>{product.rating.count} ratings</h6>
                         </div>
                         <button className='btn btn-warning m-1' style={{width:"calc(10rem + 10vw)"}} >Buy Now</button>                   
                         <button className='btn btn-secondary m-1' style={{width:"calc(10rem + 10vw)"}} onClick={()=>addToCart(product.id)}>Add To cart</button>                   

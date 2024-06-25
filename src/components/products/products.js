@@ -4,7 +4,6 @@ import Details from "../details";
 // import products from "../products.json";
 import './products.css'
 function Products(props) {
-  console.log(props);
   const[products,setProducts] = useState()
 useEffect(() => {
     const getData = async() =>{
@@ -13,7 +12,6 @@ useEffect(() => {
        const jsonData = await data.json()
        setProducts(jsonData)
       } catch (error) {
-        console.log(error);
       }
   }
   getData()
@@ -22,11 +20,9 @@ useEffect(() => {
 }, []);
 
 const getDetails = (e) =>{
-  console.log(e);
   var id = e.target.getAttribute("value");
   var url = "https://fakestoreapi.com/products/" + id;
   getdetails(url).then(function (response) {
-    console.log(response);
     localStorage.setItem("item", JSON.stringify(response));
     document.querySelector(".link").click();
   });
@@ -75,13 +71,13 @@ const addToCart = (id) =>{
       <h4 className="bg-warning text-center text-primary p-2 position-fixed w-100" style={{top:"4.7rem"}}>Products</h4>
       <div
         className="mx-auto row justify-center m-5"
-        style={{ width: "100%", margin: "auto" }}
+        style={{ width: "98%", margin: "auto" }}
       >
         {products.map((product) => {
           return (
             <div
               value={product.id}
-              className="single-product inline-block col-12 col-sm-6 col-md-4 col-lg-3 bg-white d-flex flex-column align-items-center justify-content-end border-2 border border-info rounded-3"
+              className="single-product inline-block col-6 col-md-4 col-lg-3 bg-white d-flex flex-column align-items-center justify-content-end border-2 border border-info rounded-3"
               
             >
             <Link to={"/details/" + product.title} className="d-flex flex-column text-center justify-content-around h-100 text-decoration-none p-3" onClick={()=>{props.setProductId(product.id )}}  >
@@ -101,6 +97,13 @@ const addToCart = (id) =>{
                 {product.title}
               </h6>
               <h4
+                value={product.id}
+                className=""
+    
+              >
+                ${product.price}
+              </h4>
+                            <h4
                 value={product.id}
                 className=""
     
