@@ -51,8 +51,8 @@ function Details(props) {
     return (
         product &&          
                     <div className='d-flex flex-md-row flex-column m-3' >
-                        <div className='d-flex flex-column p-3 mx-auto'>
-                        <img style={{ width: "calc(3rem + 55%)",height:"50%"}} className='align-self-center' src={product.image} alt="" />
+                        <div className='d-flex flex-column p-3 mx-auto' style={{ width: "calc(3rem + 50%)"}}>
+                        <img style={{ width: "calc(3rem + 65%)",maxHeight:"70%"}} className='align-self-center' src={product.image} alt="" />
                         </div>
                         <div className='d-flex flex-column'>
                         <h2 className='p-2 bg-light m-2 mb-0'>{product.title}</h2>
