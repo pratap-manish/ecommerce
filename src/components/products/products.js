@@ -103,13 +103,6 @@ const addToCart = (id) =>{
               >
                 ${product.price}
               </h4>
-                            <h4
-                value={product.id}
-                className=""
-    
-              >
-                ${product.price}
-              </h4>
               </div>
             </Link>
               <button className='btn btn-warning mb-4' onClick={()=>addToCart(product.id)}>Add to Cart</button>  
