@@ -75,8 +75,8 @@ function Details(props) {
                         )}     
                         <h6 className='mt-1'>{product.rating.count} ratings</h6>
                         </div>
-                        <button className='btn btn-warning m-1' style={{width:"calc(10rem + 10vw)"}} >Buy Now</button>                   
-                        <button className='btn btn-secondary m-1' style={{width:"calc(10rem + 10vw)"}} onClick={()=>addToCart(product.id)}>Add To cart</button>                   
+                        <button className='btn btn-warning m-1 shadow-none' style={{width:"calc(10rem + 10vw)"}} >Buy Now</button>                   
+                        <button className='btn btn-secondary m-1 shadow-none' style={{width:"calc(10rem + 10vw)"}} onClick={()=>addToCart(product.id)}>Add To cart</button>                   
                         {/* <span className="material-symbols-outlined  fs-5">star_rate star_rate</span> */}
                         {/* <h5 className='p-2 bg-light m-2'> Rated {product.rating.rate}/5 by {product.rating.count} customers</h5> */}
                         </div>
