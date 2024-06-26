@@ -5,10 +5,14 @@ import Details from "../details";
 import './products.css'
 function Products(props) {
   const[products,setProducts] = useState()
+  const[networkError,setnetworkError] = useState(false)
 useEffect(() => {
     const getData = async() =>{
       try {
        const data = await fetch('https://fakestoreapi.com/products')
+       if(data.status === 404){
+        setnetworkError(true)
+       }
        const jsonData = await data.json()
        setProducts(jsonData)
       } catch (error) {
@@ -19,28 +23,6 @@ useEffect(() => {
   };
 }, []);
 
-const getDetails = (e) =>{
-  var id = e.target.getAttribute("value");
-  var url = "https://fakestoreapi.com/products/" + id;
-  getdetails(url).then(function (response) {
-    localStorage.setItem("item", JSON.stringify(response));
-    document.querySelector(".link").click();
-  });
-  async function getdetails(url) {
-    var response = await fetch(url, {
-      method: "GET",
-      headers: {
-        Origin: "http://localhost:3001",
-        credentials: "include",
-        "Content-Type": "application/json; charset=utf-8 ",
-        Accept: "*/*",
-      },
-    });
-
-    response = await response.json();
-    return response;
-  }
-}
 
 const addToCart = (id) =>{
   var targetButton = document.getElementById('targetButton');
@@ -50,6 +32,7 @@ const addToCart = (id) =>{
     void targetButton.offsetWidth;
 
     targetButton.classList.add('animate');
+    //add product to cart
   let cart = localStorage.getItem("cartProducts");
   if(!cart){
     cart = []
@@ -66,7 +49,8 @@ const addToCart = (id) =>{
   localStorage.setItem("cartProducts",JSON.stringify(cart));
 }
   return ( 
-    products &&
+    <>
+    {products &&
     <div className="">
       <h4 className="bg-warning text-center text-primary p-2 position-fixed w-100" style={{top:"4.7rem"}}>Products</h4>
       <div
@@ -111,6 +95,9 @@ const addToCart = (id) =>{
         })}{" "}
       </div>
     </div>
+}
+    {!products && networkError && <> <h4 className="text-danger">Error, Couldn't load products</h4><h5 className="">Check your connection</h5> </>}
+    </>
   );
 }
 
