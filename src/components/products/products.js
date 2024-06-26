@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Details from "../details";
 // import products from "../products.json";
 import './products.css'
+import RateProduct from "../rating/rateProduct";
 function Products(props) {
   const[products,setProducts] = useState()
   const[networkError,setnetworkError] = useState(false)
@@ -87,6 +88,7 @@ const addToCart = (id) =>{
               >
                 ${product.price}
               </h4>
+              <RateProduct product={product} />
               </div>
             </Link>
               <button className='btn btn-warning mb-4' onClick={()=>addToCart(product.id)}>Add to Cart</button>  
