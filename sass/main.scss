@@ -4,8 +4,12 @@
 @import '../node_modules/bootstrap/scss/variables';
 $custom-theme-colors:(
 "maintheme":#f2f0ea,
+"mainbg":#6b6b7b,
+"darkmaintheme":#efe5c5,
 "maintexttheme":#000,
-"yellowdark":#ffee81
+"lighttexttheme":#252525,
+"darkyellow":#433b0d,
+"blonde":#faf0be,
 ); 
 $theme-colors : map-merge($custom-theme-colors,$theme-colors); 
 @import '../node_modules/bootstrap/scss/maps';
