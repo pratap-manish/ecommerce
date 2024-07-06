@@ -4,3 +4,15 @@
   .single-product{
     border: 10px white solid;
   }
+  .carousal-style{
+    overflow: hidden !important;
+    @media (max-width:390px) {
+      height: 5.8rem !important;
+    }
+    @media (min-width:391px) and (max-width:790px){
+      height: calc(5rem + 10vw) !important;
+    }
+    @media (min-width:1000px) and (max-width:1800px){
+      height: calc(5rem + 18vw) !important;
+    }
+  }

@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import './css/mainmain.css'
 import Products from './components/products/products';
 import Navbar from './components/navbar/navbar';
 import Details from './components/details';

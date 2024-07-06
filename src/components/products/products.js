@@ -1,9 +1,12 @@
 import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
+import $ from 'jquery';
 import Details from "../details";
 // import products from "../products.json";
 import './products.css'
 import RateProduct from "../rating/rateProduct";
+import Carousel from 'react-bootstrap/Carousel';
+import {Carousalimage1,Carousalimage2,Carousalimage3} from "../images/carousalimages";
 function Products(props) {
   const[products,setProducts] = useState()
   const[networkError,setnetworkError] = useState(false)
@@ -23,7 +26,11 @@ useEffect(() => {
   return () => {
   };
 }, []);
-
+$(document).on(function(){
+  $('#carouselExample').carousel({
+    interval: 2000
+  })
+});  
 
 const addToCart = (id) =>{
   var targetButton = document.getElementById('targetButton');
@@ -52,17 +59,37 @@ const addToCart = (id) =>{
   return ( 
     <>
     {products &&
-    <div className="">
-      <h4 className="bg-warning text-center text-primary p-2 position-fixed w-100" style={{top:"4.7rem"}}>Products</h4>
+    <div className="bg-black">
+      {/* <h4 className="bg-maintheme text-center text-maintexttheme p-2 position-fixed w-100" style={{top:"3.7rem",zIndex:"10"}}>Products</h4> */}
       <div
-        className="mx-auto row justify-center m-5"
+        className="mx-auto row justify-center"
         style={{ width: "98%", margin: "auto" }}
       >
+      <Carousel  className="carousal-style overflow-hidden mb-2">
+      <Carousel.Item>
+      <Carousalimage1 text="Second slide" />
+      <Carousel.Caption>
+          <h3></h3>
+          <p className="d-none d-sm-block">Big deal on sony Headphones</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+      <Carousalimage2 text="Second slide" />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+      <Carousalimage3 text="Second slide" />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
         {products.map((product) => {
           return (
+            <div className="p-0 p-sm-1 col-6 col-md-4 col-lg-3">
             <div
               value={product.id}
-              className="single-product inline-block col-6 col-md-4 col-lg-3 bg-white d-flex flex-column align-items-center justify-content-end border-2 border border-info rounded-3"
+              className="inline-block bg-white d-flex flex-column align-items-center justify-content-end border-2 border border-maintexttheme rounded-3 h-100"
               
             >
             <Link to={"/details/" + product.title} className="d-flex flex-column text-center justify-content-around h-100 text-decoration-none p-3" onClick={()=>{props.setProductId(product.id )}}  >
@@ -76,14 +103,14 @@ const addToCart = (id) =>{
               <div className="d-flex flex-column w-100">
               <h6
                 value={product.id}
-                className="inline-block"
+                className="inline-block text-darkyellow"
                 
               >
                 {product.title}
               </h6>
               <h4
                 value={product.id}
-                className=""
+                className="text-darkyellow"
     
               >
                 ${product.price}
@@ -91,7 +118,8 @@ const addToCart = (id) =>{
               <RateProduct product={product} />
               </div>
             </Link>
-              <button className='btn btn-warning mb-4' onClick={()=>addToCart(product.id)}>Add to Cart</button>  
+              <button className='btn btn-outline-maintexttheme mb-4 fw-semibold' onClick={()=>addToCart(product.id)}>Add to Cart</button>  
+            </div>
             </div>
           );
         })}{" "}
