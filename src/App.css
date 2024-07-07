@@ -1,5 +1,8 @@
 html{
-  background-color: #f2f0ea !important;
+  background-color: #000 !important;
+}
+body{
+  background-color: #000 !important;
 }
 .App {
   text-align: center;
