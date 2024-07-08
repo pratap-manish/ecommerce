@@ -9,6 +9,16 @@ h1,h2,h3{
   font-weight: 600 !important;
   letter-spacing: 1px !important;
 }
+button{
+  :focus {
+    outline: 0;
+  }
+  
+  /* establish desired focus ring appearance for appropriate input modalities */
+  :focus-visible {
+    outline: 2px solid blue;
+  }
+}
 .App {
   text-align: center;
 }

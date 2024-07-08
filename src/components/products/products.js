@@ -59,7 +59,7 @@ const addToCart = (id) =>{
   return ( 
     <>
     {products &&
-    <div className="bg-black">
+    <div className="bg-maintexttheme">
       {/* <h4 className="bg-maintheme text-center text-maintexttheme p-2 position-fixed w-100" style={{top:"3.7rem",zIndex:"10"}}>Products</h4> */}
       <div
         className="mx-auto row justify-center"

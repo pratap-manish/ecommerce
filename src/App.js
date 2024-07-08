@@ -12,7 +12,7 @@ function App(props) {
   const [productId, setProductId] = useState();
   return (<>
     <BrowserRouter>
-    {/* <Loader isloading={props.isloading} /> */}
+    {/* <Loader isloading={true} /> */}
     <Navbar  />
     <Routes>
     <Route exact path="/" element={<Products setProductId={setProductId} />}/>
