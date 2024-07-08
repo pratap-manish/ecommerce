@@ -52,7 +52,7 @@ function Details(props) {
                         <div className='d-flex flex-column bg-maintheme'>
                         <h2 className='p-2 m-2 mb-0 text-darkyellow'>{product.title}</h2>
                         {/* <h5 className='p-2 bg-light m-2'>{product.category}</h5> */}
-                        <h4 className='p-2 m-2 fs-5'>{product.description}</h4>
+                        <h4 className='p-2 m-2 fs-6'>{product.description}</h4>
                         <h4 className='p-2 m-2 fs-1'> $ {product.price}</h4>
                         <div className='inline ms-3 mb-3'>
                         <RateProduct product={product} />  
