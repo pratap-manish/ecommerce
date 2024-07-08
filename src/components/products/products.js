@@ -63,7 +63,7 @@ const addToCart = (id) =>{
       {/* <h4 className="bg-maintheme text-center text-maintexttheme p-2 position-fixed w-100" style={{top:"3.7rem",zIndex:"10"}}>Products</h4> */}
       <div
         className="mx-auto row justify-center"
-        style={{ width: "98%", margin: "auto" }}
+        style={{ width: "100%", margin: "auto" }}
       >
       <Carousel  className="carousal-style overflow-hidden mb-2">
       <Carousel.Item>

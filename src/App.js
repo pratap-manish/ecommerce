@@ -7,10 +7,12 @@ import Details from './components/details';
 import { useState } from 'react';
 import  { BrowserRouter ,Routes, Route}from  'react-router-dom';
 import Cart from './components/cart/cart';
+import Loader from './components/loader/loader';
 function App(props) {
   const [productId, setProductId] = useState();
   return (<>
     <BrowserRouter>
+    {/* <Loader isloading={props.isloading} /> */}
     <Navbar  />
     <Routes>
     <Route exact path="/" element={<Products setProductId={setProductId} />}/>

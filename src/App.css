@@ -1,5 +1,13 @@
 html{
-  background-color: #f2f0ea !important;
+  background-color: #000 !important;
+}
+body{
+  background-color: #000 !important;
+}
+h1,h2,h3{
+  font-family: "GoldLines" !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
 }
 .App {
   text-align: center;

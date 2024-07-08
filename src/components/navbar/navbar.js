@@ -17,7 +17,7 @@ function Navbar(props) {
             </div>
             <div>
             <button id="targetButton" className='btn'></button>
-            <Link to="/cart"  className='btn btn-maintexttheme me-3'><span className="material-symbols-outlined">shopping_cart</span></Link>
+            <Link to="/cart"  className='btn btn-outline-maintheme me-3'><span className="material-symbols-outlined">shopping_cart</span></Link>
             </div>
         </div>
     );
