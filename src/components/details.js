@@ -45,7 +45,7 @@ function Details(props) {
       }
     return (
         product &&          
-                    <div className='d-flex flex-md-row flex-column mx-0 mx-sm-2 bg-black' >
+                    <div className='d-flex flex-md-row flex-column mx-0 mx-sm-2 bg-white' >
                         <div className='d-flex flex-column p-3 mx-auto bg-white' style={{ width: "calc(3rem + 50%)"}}>
                         <img style={{ width: "calc(3rem + 65%)",maxHeight:"70%"}} className='align-self-center' src={product.image} alt="" />
                         </div>
@@ -58,8 +58,8 @@ function Details(props) {
                         <RateProduct product={product} />  
                         <h6 className='mt-1 text-darkyellow'>{product.rating.count} ratings</h6>
                         </div>
-                        <button className='btn btn-dark m-1 shadow-none' style={{width:"calc(10rem + 10vw)"}} >Buy Now</button>                   
-                        <button className='btn btn-outline-dark m-1 shadow-none' style={{width:"calc(10rem + 10vw)"}} onClick={()=>addToCart(product.id)}>Add To cart</button>                   
+                        <button className='btn btn-maintexttheme m-1 shadow-none' style={{width:"calc(10rem + 10vw)"}} >Buy Now</button>                   
+                        <button className='btn btn-outline-maintexttheme m-1 shadow-none' style={{width:"calc(10rem + 10vw)"}} onClick={()=>addToCart(product.id)}>Add To cart</button>                   
                         {/* <span className="material-symbols-outlined  fs-5">star_rate star_rate</span> */}
                         {/* <h5 className='p-2 bg-light m-2'> Rated {product.rating.rate}/5 by {product.rating.count} customers</h5> */}
                         </div>
