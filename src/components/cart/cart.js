@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function Cart(props) {
     const [cartProducts, setcartProducts] = useState([]);
     useEffect(() => {
+      props.setisloading(true)
         const getCart = () => {
             const response = localStorage.getItem("cartProducts")
             if(response){
@@ -19,9 +20,10 @@ function Cart(props) {
         const product = await apiCalls.Get("https://fakestoreapi.com/products/" + id);
         product.count = count;
         setcartProducts((prev)=>[
-            ...prev,
-        product
+          ...prev,
+          product
         ])
+        props.setisloading(false)
         }
         setcartProducts([])
         const data = async()=>{
@@ -30,11 +32,9 @@ function Cart(props) {
                 getProducts(each,index)
             }
         })
-        
-    }
+      }
     data();
-        return () => {
-            
+        return () => { 
         };
     }, []);
 

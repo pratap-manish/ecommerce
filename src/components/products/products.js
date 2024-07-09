@@ -13,7 +13,9 @@ function Products(props) {
 useEffect(() => {
     const getData = async() =>{
       try {
+        props.setisloading(true);
        const data = await fetch('https://fakestoreapi.com/products')
+       props.setisloading(false)
        if(data.status === 404){
         setnetworkError(true)
        }
@@ -97,7 +99,7 @@ const addToCart = (id) =>{
                 value={product.id}
                 src={product.image}
                 style={{ width: "calc(5rem + 40%)",height:"50%"}}
-                alt="product image"
+                alt="product"
                 className="mx-auto"
               />
               <div className="d-flex flex-column w-100">

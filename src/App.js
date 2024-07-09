@@ -10,14 +10,15 @@ import Cart from './components/cart/cart';
 import Loader from './components/loader/loader';
 function App(props) {
   const [productId, setProductId] = useState();
+  const [isloading, setisloading] = useState(false);
   return (<>
     <BrowserRouter>
-    {/* <Loader isloading={true} /> */}
+    <Loader isloading={isloading} />
     <Navbar  />
     <Routes>
-    <Route exact path="/" element={<Products setProductId={setProductId} />}/>
-    <Route path="/details/:productId"  element={<Details productId = {productId} />}/>
-    <Route path="/cart"  element={<Cart setProductId={setProductId} />}/>
+    <Route exact path="/" element={<Products setProductId={setProductId} setisloading={setisloading} />}/>
+    <Route path="/details/:productId"  element={<Details productId = {productId} setisloading={setisloading} />}/>
+    <Route path="/cart"  element={<Cart setProductId={setProductId} setisloading={setisloading} />}/>
     
     </Routes>
     </BrowserRouter> 
