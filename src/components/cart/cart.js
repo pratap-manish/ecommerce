@@ -31,6 +31,9 @@ function Cart(props) {
           if(each>=1){
             getProducts(each,index)
           }
+          else{
+            props.setisloading(false)
+          }
         })
       }
       if(cartItems.length == 0){
