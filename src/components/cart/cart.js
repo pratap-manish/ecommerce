@@ -24,14 +24,17 @@ function Cart(props) {
           product
         ])
         props.setisloading(false)
-        }
-        setcartProducts([])
-        const data = async()=>{
-            await cartItems.map((each,index)=>{
-            if(each>=1){
-                getProducts(each,index)
-            }
+      }
+      setcartProducts([])
+      const data = async()=>{
+        await cartItems.map((each,index)=>{
+          if(each>=1){
+            getProducts(each,index)
+          }
         })
+      }
+      if(cartItems.length == 0){
+        props.setisloading(false)        
       }
     data();
         return () => { 
