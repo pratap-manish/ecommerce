@@ -2,11 +2,12 @@ import React ,{useState, useEffect} from 'react';
 import apicalls from '../apicalls';
 import RateProduct from './rating/rateProduct';
 function Details(props) {
+  const productId = props?.productId?props.productId:1;
     useEffect(() => {
       props.setisloading(true)
         const getData = async()=>{
             try {
-                const response = await apicalls.Get("https://fakestoreapi.com/products/" + props?.productId)
+                const response = await apicalls.Get("https://fakestoreapi.com/products/" + productId)
                 setproduct(response)
                 props.setisloading(false)
 
